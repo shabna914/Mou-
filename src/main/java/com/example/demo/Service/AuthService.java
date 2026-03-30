@@ -30,7 +30,7 @@ public class AuthService {
 
         userRepository.save(user);
 
-        // 🔥 REAL TOKEN GENERATION
+        
         String token = jwtUtil.generateToken(user.getEmail());
 
         return new AuthResponseDto(true, "Signup successful", token);
@@ -45,7 +45,7 @@ public class AuthService {
             return new AuthResponseDto(false, "Invalid credentials", null);
         }
 
-        // 🔥 REAL TOKEN GENERATION
+        
         String token = jwtUtil.generateToken(user.getEmail());
 
         return new AuthResponseDto(true, "Signin successful", token);
